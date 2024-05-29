@@ -1,0 +1,35 @@
+@use "../../utils/variables";
+
+.UserPageBlock {
+  width: 100%;
+  .userInfo {
+    width: 100%;
+    height: 200px;
+    background: variables.$primaryMain;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    padding: 0 200px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    .avatar {
+      width: 150px;
+      margin-right: 100px;
+      img {
+        border-radius: 50px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .name {
+      p {
+        font-size: 24px;
+        color: variables.$white100Color;
+      }
+    }
+  }
+  .library {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}

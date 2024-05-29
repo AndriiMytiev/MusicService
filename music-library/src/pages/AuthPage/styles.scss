@@ -1,0 +1,128 @@
+@use "../../utils/variables";
+
+.AuthPage {
+  background-color: #000;
+  background-image: url("../../assets/background.png");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 4;
+
+  .authPageTitle {
+    margin-right: 10vw;
+    opacity: 0.9;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 17vw;
+      margin-bottom: 2vw;
+    }
+    h1 {
+      color: variables.$primaryMain !important;
+      margin: 0;
+      padding: 0;
+      font-size: 2vw;
+      text-align: center;
+      letter-spacing: 2px;
+      span {
+        color: variables.$primaryMain !important;
+        font-style: italic;
+      }
+    }
+  }
+
+  * {
+    color: variables.$white75Color !important;
+  }
+
+  .primaryButton {
+    background: variables.$primaryMain !important;
+    &:hover {
+      background: variables.$primaryTransparent !important;
+    }
+  }
+
+  .MuiFormHelperText-root {
+    color: variables.$errorColor !important;
+  }
+
+  .logoBlockContainer {
+    position: absolute;
+    width: 27vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 16vw;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Ubuntu";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 3vw;
+      line-height: 3vw;
+    }
+    p {
+      font-family: "Ubuntu";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1vw;
+      line-height: 1vw;
+      text-align: center;
+    }
+  }
+
+  .authBlockContainer {
+    width: 27vw;
+    background: variables.$darkBackground;
+    display: flex;
+    border-radius: 2vw;
+    .authBlockContent {
+      margin: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      h1 {
+        margin: 25px 0 50px 0;
+        font-weight: 700;
+        font-size: 2vw;
+        line-height: 2vw;
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+    position: relative;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      border-radius: 2vw;
+      border: 1px solid transparent;
+      background: linear-gradient(
+                      to bottom,
+                      variables.$primarySecondary,
+                      variables.$primaryMain,
+                      rgba(254, 94, 0, 0)
+      )
+      border-box;
+      -webkit-mask:
+              linear-gradient(#fff 0 0) padding-box,
+              linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+    }
+  }
+}

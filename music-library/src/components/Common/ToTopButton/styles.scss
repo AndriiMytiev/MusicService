@@ -1,0 +1,31 @@
+@use "../../../utils/variables";
+
+.ToTopButton {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 3;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: variables.$primaryMain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  opacity: 0;
+  &.visible {
+    opacity: 1;
+  }
+  &:hover {
+    cursor: pointer;
+    background: variables.$primaryTransparent;
+  }
+  p {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    color: variables.$white100Color;
+  }
+}

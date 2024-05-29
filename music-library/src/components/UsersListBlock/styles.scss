@@ -1,0 +1,46 @@
+@use "../../utils/variables";
+
+.UsersList {
+  width: 100%;
+  .listWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    .listItem {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      &:last-child {
+        margin: 0;
+      }
+      .avatar {
+        width: 100px;
+        margin-right: 50px;
+        img {
+          border-radius: 20px;
+          width: 100%;
+        }
+      }
+      .info {
+        p {
+         &:hover {
+           color: variables.$primaryMain;
+           cursor: pointer;
+         }
+        }
+      }
+      .editUser {
+        font-size: 12px;
+        color: variables.$white100Color;
+        background: variables.$primaryMain;
+        height: 25px;
+        text-transform: none;
+        position: absolute;
+        right: 30px;
+        top: 10px;
+      }
+    }
+  }
+}

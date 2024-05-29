@@ -1,0 +1,18 @@
+@use "../../utils/variables";
+
+.MusicList {
+  .searchBar {
+    display: flex;
+    justify-content: space-between;
+    .addButton {
+      width: 200px;
+      height: 32px;
+      background: variables.$primaryMain;
+      color: variables.$white100Color;
+      &:hover {
+        background: variables.$primaryTransparent;
+        text-decoration: none;
+      }
+    }
+  }
+}
