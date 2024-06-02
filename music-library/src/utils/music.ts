@@ -37,9 +37,9 @@ export const searchMusic = (musicList: Music[], text: string) => {
   });
 };
 
-export const uploadFile = async (file: File) => {
+export const uploadFile = async (file: File, newFileName: string) => {
   if (file) {
-    const storageRef = ref(storage, `music/${file.name}`);
+    const storageRef = ref(storage, `music/${newFileName}`);
 
     try {
       await uploadBytes(storageRef, file);

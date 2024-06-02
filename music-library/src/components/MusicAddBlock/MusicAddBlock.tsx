@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import defaultAvatar from "../../assets/defaultAvatar.jpg";
 import { uploadFile } from "../../utils/music";
+import { v4 as uuidv4 } from 'uuid';
 
 export const MusicAddBlock = observer(() => {
   const {
@@ -64,18 +65,27 @@ export const MusicAddBlock = observer(() => {
 
   const handleAddButtonClick = () => {
     if (file && currentUser && title && author) {
-      uploadFile(file);
-      processMusicCreating({
-        user: currentUser.id,
-        title: title,
-        fileName: file.name,
-        author: author,
-        tags: tags,
-      });
-      setTimeout(() => {
-        setUploadError("");
-        navigate("/");
-      }, 1000);
+      // const randomKey = Math.floor(10000 + Math.random() * 90000);
+      const randomKey = uuidv4();
+      const newFileName = `${file.name}_${randomKey}`;
+
+      uploadFile(file, newFileName)
+        .then(() => {
+          processMusicCreating({
+            user: currentUser.id,
+            title: title,
+            fileName: newFileName,
+            author: author,
+            tags: tags,
+          });
+          setTimeout(() => {
+            setUploadError("");
+            navigate("/");
+          }, 1000);
+        })
+        .catch(error => {
+          setUploadError("Failed to upload file");
+        });
     } else {
       setUploadError("Please upload file!");
     }

@@ -30,7 +30,7 @@ export const ToTopButton = observer(() => {
   }, []);
 
   return (
-    <div className={`ToTopButton ${isVisible ? "visible" : ""}`} onClick={scrollToTop} role="button">
+    <div className={`ToTopButton ${isVisible ? "visible" : ""}`} onClick={scrollToTop}>
       <p>↑</p>
     </div>
   );
