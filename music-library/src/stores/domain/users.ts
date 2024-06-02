@@ -67,10 +67,10 @@ export default class UsersStore {
       );
 
       console.log("Delete user:", responseUser.data);
-      const responseMusic = await axios.delete(
-        `${this.rootStore.globalStore.serverUrl}/api/musics/${id}`,
-      );
-      console.log("Delete music:", responseMusic.data);
+      // const responseMusic = await axios.delete(
+      //   `${this.rootStore.globalStore.serverUrl}/api/musics/${id}`,
+      // );
+      // console.log("Delete music:", responseMusic.data);
     } catch (error) {
       console.error("Error deleting user:", error);
     }
