@@ -62,11 +62,13 @@ export const UsersListBlock = observer(() => {
               </div>
               <div className="info">
                 {user?.name !== null && user?.surname !== null ? (
-                  <p onClick={() => handleUserClick(user.id)}>
-                    {user?.name} {user?.surname} ({user.login})
-                  </p>
+                  <div onClick={() => handleUserClick(user.id)}>
+                    <p>{user?.name} {user?.surname} ({user.login})</p>
+                  </div>
                 ) : (
-                  <p onClick={() => handleUserClick(user.id)}>{user?.login}</p>
+                  <div onClick={() => handleUserClick(user.id)}>
+                    <p>{user?.login}</p>
+                  </div>
                 )}
               </div>
               {currentUser?.admin && (

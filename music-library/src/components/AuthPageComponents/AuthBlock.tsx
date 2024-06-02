@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const AuthBlock = observer(() => {
   const {
     authStore: { state, setLoginError },
-    usersStore: { users, getUsers },
+    usersStore: { getUsers },
   } = useStore();
 
   useEffect(() => {

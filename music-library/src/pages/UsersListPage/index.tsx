@@ -8,7 +8,6 @@ import { UsersListBlock } from "../../components/UsersListBlock/UsersListBlock";
 export const UsersListPage = observer(() => {
   const {
     globalStore: { currentUser, setIsEditPageAvailable },
-    usersStore: { getUsers },
   } = useStore();
 
   const navigate = useNavigate();

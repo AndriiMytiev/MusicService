@@ -83,9 +83,9 @@ export const MusicListItem = observer((props: MusicListItemProps) => {
       <div className="tags">
         {music.tags.map((tag, index) => {
           return (
-            <p key={tag + index} onClick={() => handleTagClick(tag)}>
-              #{tag}
-            </p>
+            <div key={tag + index} onClick={() => handleTagClick(tag)}>
+              <p>#{tag}</p>
+            </div>
           );
         })}
       </div>
@@ -135,14 +135,14 @@ export const MusicListItem = observer((props: MusicListItemProps) => {
         {user && user?.name !== null && user?.surname !== null ? (
           <p>
             Upload by{" "}
-            <span onClick={() => handleUserClick(user?.id)}>
+            <span onClick={() => handleUserClick(user?.id)} role="button">
               {user.name} {user.surname} ({user.login})
             </span>
           </p>
         ) : (
           <p>
             Upload by{" "}
-            <span onClick={() => handleUserClick(user?.id)}>{user?.login}</span>
+            <span onClick={() => handleUserClick(user?.id)} role="button">{user?.login}</span>
           </p>
         )}
       </div>
