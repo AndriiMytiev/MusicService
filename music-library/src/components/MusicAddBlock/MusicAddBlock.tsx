@@ -74,7 +74,7 @@ export const MusicAddBlock = observer(() => {
           processMusicCreating({
             user: currentUser.id,
             title: title,
-            fileName: newFileName,
+            filename: newFileName,
             author: author,
             tags: tags,
           });

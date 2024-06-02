@@ -67,7 +67,7 @@ export const MusicEditBlock = observer((props: MusicEditBlockProps) => {
       id: music.id,
       user: music.user,
       title: title,
-      fileName: music.fileName,
+      filename: music.filename,
       author: author,
       tags: tags,
     };

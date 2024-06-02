@@ -5,9 +5,8 @@ import { User } from "../../types/user";
 export default class GlobalStore {
   rootStore: RootStore;
 
-  // serverUrl: string =
-  //   "https://musiclibrary-database-131675906386.herokuapp.com";
-  serverUrl: string = "http://localhost:8080";
+  serverUrl: string = "https://music-service-c35f0d8e0e21.herokuapp.com";
+  // serverUrl: string = "http://localhost:8080";
 
   currentUser: User | null = null;
 

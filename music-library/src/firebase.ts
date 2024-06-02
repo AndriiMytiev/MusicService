@@ -20,12 +20,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
 
-const audioTest = ref(storage, "/music/testAudio.mp3");
-
-export const testUrl = getDownloadURL(audioTest)
-  .then((url) => {
-    return url;
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+// const audioTest = ref(storage, "/music/testAudio.mp3");
+//
+// export const testUrl = getDownloadURL(audioTest)
+//   .then((url) => {
+//     return url;
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });

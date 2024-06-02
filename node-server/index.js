@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const userRouter = require("./routers/user.router");
 const musicRouter = require("./routers/music.router");
+const functions = require("firebase-functions");
+
 const PORT = process.env.PORT || 8080;
 
 const app = express();
@@ -16,3 +18,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`server started on post ${PORT}`));
+
+exports.api = functions.https.onRequest(app);

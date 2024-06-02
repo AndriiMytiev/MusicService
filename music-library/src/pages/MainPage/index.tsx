@@ -17,6 +17,7 @@ export const MainPage = observer(() => {
     if (currentUser === null) {
       navigate("/auth");
     }
+    console.log(music)
   }, [currentUser, navigate]);
 
   useEffect(() => {

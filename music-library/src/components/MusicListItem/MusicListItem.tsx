@@ -33,7 +33,7 @@ export const MusicListItem = observer((props: MusicListItemProps) => {
   const [audioUrl, setAudioUrl] = useState<string>("");
   const [user, setUser] = useState<User | null>(null);
 
-  const musicRef = ref(storage, `music/${music.fileName}`);
+  const musicRef = ref(storage, `music/${music.filename}`);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -81,7 +81,7 @@ export const MusicListItem = observer((props: MusicListItemProps) => {
       </p>
       <ReactAudioPlayer src={audioUrl} controls={true} volume={0.3} />
       <div className="tags">
-        {music.tags.map((tag, index) => {
+        {music.tags && music.tags.map((tag, index) => {
           return (
             <div key={tag + index} onClick={() => handleTagClick(tag)}>
               <p>#{tag}</p>

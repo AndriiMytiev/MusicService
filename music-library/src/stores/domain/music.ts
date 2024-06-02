@@ -84,7 +84,7 @@ export default class MusicStore {
   };
 
   processMusicDeleting = async (music: Music) => {
-    const musicRef = ref(storage, `music/${music.fileName}`);
+    const musicRef = ref(storage, `music/${music.filename}`);
     try {
       const response = await axios.delete(
         `${this.rootStore.globalStore.serverUrl}/api/music/${music.id}`,
@@ -92,7 +92,7 @@ export default class MusicStore {
       console.log("Delete music:", response.data);
       deleteObject(musicRef)
         .then(() => {
-          console.log("Delete music from FirebaseStorage: ", music.fileName);
+          console.log("Delete music from FirebaseStorage: ", music.filename);
         })
         .catch((error) => {
           console.error(error);
