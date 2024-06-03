@@ -30,7 +30,7 @@ export const UserFavoritesPage = observer(() => {
 
   const currentMusicList: Music[] = useMemo(() => {
     if (currentUser && currentUser.favorites) {
-      return music.filter((el) => currentUser.favorites.includes(el.id));
+      return music.filter((el) => el.id && currentUser.favorites.includes(el.id));
     } else {
       return [];
     }
