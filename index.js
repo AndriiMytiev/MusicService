@@ -7,11 +7,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 // Використовуємо CORS з налаштуваннями
-app.use(cors({
-  origin: '*', 
-  credentials: true,
-  optionsSuccessStatus: 200,
-}));
+app.use(cors());
 
 app.use(express.json());
 
