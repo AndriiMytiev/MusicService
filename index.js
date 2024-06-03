@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
     "Access-Control-Allow-Methods",
     "PUT, POST, GET, DELETE, PATCH, OPTIONS",
   );
-  res.end("<h1>Home page</h1>");
+  res.end("<h1>Home host server</h1>");
 });
 
 app.listen(PORT, () => console.log(`server started on post ${PORT}`));
