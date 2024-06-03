@@ -5,7 +5,7 @@ const DATABASE_URL =
 
 const pool = new Pool({
   connectionString: DATABASE_URL,
-  ssl: { rejectUnauthorized: true },
+  ssl: { rejectUnauthorized: false },
 });
 
 // const pool = new Pool({
