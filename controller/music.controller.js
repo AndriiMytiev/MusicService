@@ -2,10 +2,10 @@ const db = require("../db");
 
 class MusicController {
   async createMusic(req, res) {
-    const { user, title, fileName, author, tags } = req.body;
+    const { user, title, filename, author, tags } = req.body;
     const newMusic = await db.query(
-      'INSERT INTO music ("user", title, "fileName", author, tags) values ($1, $2, $3, $4, $5) RETURNING *',
-      [user, title, fileName, author, tags],
+      'INSERT INTO music ("user", title, "filename", author, tags) values ($1, $2, $3, $4, $5) RETURNING *',
+      [user, title, filename, author, tags],
     );
     res.json(newMusic.rows[0]);
   }
@@ -22,14 +22,14 @@ class MusicController {
   }
 
   async updateMusic(req, res) {
-    const { id, user, title, fileName, author, tags } = req.body;
+    const { id, user, title, filename, author, tags } = req.body;
     console.log("Оновлення музики з ID:", id);
 
     // Додайте виведення в консоль для відлагодження отриманих даних
     console.log("Отримані дані:", req.body);
     const music = await db.query(
-      'UPDATE music SET "user" = $1, title = $2, "fileName" = $3, author = $4, tags = $5 WHERE id = $6 RETURNING *',
-      [user, title, fileName, author, tags, id],
+      'UPDATE music SET "user" = $1, title = $2, "filename" = $3, author = $4, tags = $5 WHERE id = $6 RETURNING *',
+      [user, title, filename, author, tags, id],
     );
 
     res.json(music.rows[0]);
