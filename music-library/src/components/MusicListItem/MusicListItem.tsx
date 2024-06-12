@@ -1,3 +1,4 @@
+
 import "./styles.scss";
 import { observer } from "mobx-react-lite";
 import { Music } from "../../types/music";
@@ -37,17 +38,12 @@ export const MusicListItem = observer((props: MusicListItemProps) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(typeof currentUser?.favorites)
-  }, [currentUser]);
-
-  useEffect(() => {
     const url = getMusicUrl(musicRef);
     url.then((r) => r !== undefined && r !== null && setAudioUrl(r));
   }, [music, musicRef]);
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log(music.user)
       if (music.user) {
         const userData = await getUserByID(music.user);
         setUser(userData);

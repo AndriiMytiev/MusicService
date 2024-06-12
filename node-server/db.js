@@ -10,7 +10,6 @@ const Pool = require("pg").Pool;
 //
 // console.log("url: " + DATABASE_URL);
 
-
 const pool = new Pool({
   user: "postgres",
   password: "admin",

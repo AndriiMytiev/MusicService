@@ -66,18 +66,14 @@ export default class MusicStore {
 
   processMusicEditing = async (music: Music) => {
     try {
-      // Ваш запит PUT для оновлення користувача
       const response = await axios.put(
         `${this.rootStore.globalStore.serverUrl}/api/music`,
         music,
       );
-
-      // Опціонально, обробляйте відповідь від сервера
       console.log("Updated music:", response.data);
       this.getMusic();
       return true;
     } catch (error) {
-      // Обробка помилок
       console.error("Error updating music:", error);
       return false;
     }

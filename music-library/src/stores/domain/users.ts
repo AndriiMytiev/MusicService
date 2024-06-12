@@ -34,27 +34,24 @@ export default class UsersStore {
       const response = await axios.get(
         `${this.rootStore.globalStore.serverUrl}/api/users/${userId}`,
       );
-      return response.data as User; // Повертаємо конкретного користувача
+      return response.data as User;
     } catch (error) {
       const axiosError = error as AxiosError;
       console.error("Error fetching user:", axiosError.message);
-      return null; // Повертаємо null у разі помилки
+      return null;
     }
   };
 
   processUserEditing = async (user: User) => {
     try {
-      // Ваш запит PUT для оновлення користувача
       const response = await axios.put(
         `${this.rootStore.globalStore.serverUrl}/api/users`,
         user,
       );
 
-      // Опціонально, обробляйте відповідь від сервера
       console.log("Updated user:", response.data);
       return true;
     } catch (error) {
-      // Обробка помилок
       console.error("Error updating user:", error);
       return false;
     }
@@ -67,10 +64,6 @@ export default class UsersStore {
       );
 
       console.log("Delete user:", responseUser.data);
-      // const responseMusic = await axios.delete(
-      //   `${this.rootStore.globalStore.serverUrl}/api/musics/${id}`,
-      // );
-      // console.log("Delete music:", responseMusic.data);
     } catch (error) {
       console.error("Error deleting user:", error);
     }
@@ -78,7 +71,6 @@ export default class UsersStore {
 
   processFavouritesEditing = async (user: User, newFavorites: number[]) => {
     try {
-      // Ваш запит PUT для оновлення користувача
       const updatedUser: User = {
         id: user.id,
         login: user.login,
@@ -93,11 +85,9 @@ export default class UsersStore {
         `${this.rootStore.globalStore.serverUrl}/api/users`,
         updatedUser,
       );
-      // Опціонально, обробляйте відповідь від сервера
       console.log("Updated user:", response.data);
       this.rootStore.globalStore.setCurrentUser(updatedUser);
     } catch (error) {
-      // Обробка помилок
       console.error("Error updating user:", error);
       return false;
     }

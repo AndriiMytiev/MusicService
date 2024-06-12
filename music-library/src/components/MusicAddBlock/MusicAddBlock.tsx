@@ -65,7 +65,6 @@ export const MusicAddBlock = observer(() => {
 
   const handleAddButtonClick = () => {
     if (file && currentUser && title && author) {
-      // const randomKey = Math.floor(10000 + Math.random() * 90000);
       const randomKey = uuidv4();
       const newFileName = `${file.name}_${randomKey}`;
 
